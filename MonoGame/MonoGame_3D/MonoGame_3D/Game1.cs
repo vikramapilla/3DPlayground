@@ -2,6 +2,11 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+
+//https://www.gamefromscratch.com/post/2015/08/20/Monogame-Tutorial-Beginning-3D-Programming.aspx
+
+//https://docs.microsoft.com/de-de/xamarin/graphics-games/monogame/3d/part3
+
 namespace MonoGame_3D
 {
     /// <summary>
@@ -12,12 +17,15 @@ namespace MonoGame_3D
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Vector3 camTarget, camPosition;
-        Model mWall, mGround, mCoins_electric;
+        Model mWall, mGround, mCoins_electric, mHole;
         Matrix viewMatrix, projektionsMatrix, worldMatrix;
+        _3DBall mBall3d;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.IsFullScreen = true;
+
             Content.RootDirectory = "Content";
         }
 
@@ -30,17 +38,23 @@ namespace MonoGame_3D
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            base.Initialize();
+
 
             camTarget = new Vector3(0f, 0f, 0f);
             camPosition = new Vector3(0f, 0.5f, 0f);
-            projektionsMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f), graphics.GraphicsDevice.Viewport.AspectRatio, 1f, 100000000f);
+            projektionsMatrix = Matrix.CreatePerspectiveFieldOfView(MathHelper.ToRadians(45f), graphics.GraphicsDevice.Viewport.AspectRatio, 0.1f, 1000f);
             viewMatrix = Matrix.CreateLookAt(camPosition, camTarget, new Vector3(0f, 1f, 0f));// Y up
             worldMatrix = Matrix.CreateWorld(camTarget, Vector3.Forward, Vector3.Up);
 
             mWall = Content.Load<Model>("GameZoneWall");
             mGround = Content.Load<Model>("GameZoneGroundLevel_00");
             mCoins_electric = Content.Load<Model>("Coins_electric");
+            mHole = Content.Load<Model>("Hole");
+
+            mBall3d = new _3DBall();
+            mBall3d.Initialize(Content);
+
+            base.Initialize();
         }
 
         /// <summary>
@@ -79,22 +93,22 @@ namespace MonoGame_3D
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
             {
 //                camPosition.X -= 1f;
-                camTarget.X += 1f;
+                camTarget.X += 0.1f;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Right))
             {
 //                camPosition.X += 1f;
-                camTarget.X -= 1f;
+                camTarget.X -= 0.1f;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Up))
             {
-                camPosition.Y -= 1f;
-                camTarget.Y -= 1f;
+                camPosition.Y += 0.1f;
+                camTarget.Y += 0.1f;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Down))
             {
-                camPosition.Y += 1f;
-                camTarget.Y += 1f;
+                camPosition.Y -= 0.1f;
+                camTarget.Y -= 0.1f;
             }
             if (Keyboard.GetState().IsKeyDown(Keys.OemPlus))
             {
@@ -170,6 +184,22 @@ namespace MonoGame_3D
 
                 mesh.Draw();
             }
+
+            foreach (ModelMesh mesh in mHole.Meshes)
+            {
+                foreach (BasicEffect effect in mesh.Effects)
+                {
+                    effect.AmbientLightColor = new Vector3(1f, 0, 0);
+                    effect.View = viewMatrix;
+                    effect.World = worldMatrix;
+                    effect.Projection = projektionsMatrix;
+                }
+
+                mesh.Draw();
+            }
+
+            float aspectRatio = graphics.PreferredBackBufferWidth / (float)graphics.PreferredBackBufferHeight;
+            mBall3d.Draw(camPosition, aspectRatio);
 
             base.Draw(gameTime);
         }
