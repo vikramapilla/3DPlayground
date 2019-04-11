@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/3DBall.png</File>
+    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/3DBall.dae</File>
+    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/GameZoneGroundLevel_00.png</File>
+    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/GameZoneGroundLevel_00.dae</File>
+    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/GamoZoneWall.png</File>
+    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/GameZoneWall.dae</File>
+    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/Coins_electric.png</File>
+    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/Coins_electric.dae</File>
+    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/Animal.png</File>
+    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/Animal.dae</File>
+  </SourceFiles>
+</SourceFileCollection>

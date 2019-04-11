@@ -23,19 +23,19 @@ namespace DodgeBall
 
             if (Keyboard.GetState().IsKeyDown(Keys.I))
             {
-                playerPosition += new Vector3(0, 0, 0.05f);
+                playerPosition += new Vector3(0, 0, 0.1f);
             }
             if (Keyboard.GetState().IsKeyDown(Keys.K))
             {
-                playerPosition -= new Vector3(0, 0, 0.05f);
+                playerPosition -= new Vector3(0, 0, 0.1f);
             }
             if (Keyboard.GetState().IsKeyDown(Keys.L))
             {
-                playerPosition -= new Vector3(0.05f, 0, 0);
+                playerPosition -= new Vector3(0.1f, 0, 0);
             }
             if (Keyboard.GetState().IsKeyDown(Keys.J))
             {
-                playerPosition += new Vector3(0.05f, 0, 0);
+                playerPosition += new Vector3(0.1f, 0, 0);
             }
 
             //Console.WriteLine("Y = {0}", playerPosition.Z);

@@ -34,3 +34,4 @@ C:\Users\vikra\source\repos\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Mo
 C:\Users\vikra\source\repos\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Models\GamoZoneWall.xnb
 C:\Users\vikra\source\repos\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Models\GamoZoneWall_0.xnb
 C:\Users\vikra\source\repos\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Models\Coins_electric.xnb
+C:\Users\vikra\source\repos\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Models\Animal.xnb
