@@ -72,3 +72,16 @@ C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBa
 C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\obj\x86\Debug\DodgeBall.csproj.CopyComplete
 C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\obj\x86\Debug\DodgeBall.exe
 C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\obj\x86\Debug\DodgeBall.pdb
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Audio\BackgroundMusic.wma
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Audio\BackgroundMusic.xnb
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Audio\CoinExplosion.xnb
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Audio\EnemyExplosion.xnb
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Audio\GameOver.xnb
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Audio\PlayerExplosion.xnb
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Fonts\Score.xnb
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Image\GameBackGround.xnb
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Image\GameOver.xnb
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Audio\BackgroundMusic_01.xnb
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Audio\BackgroundMusic_01.wma
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Image\Restart.xnb
+C:\Users\vikra\OneDrive\Documents\GitHub\3DPlayground\MonoGame\DodgeBall\DodgeBall\bin\Windows\x86\Debug\Content\Image\Credits.xnb

@@ -15,8 +15,7 @@ namespace DodgeBall
         bool[] coinsDraw = new bool[200];
 
         Random random = new Random();
-
-        static float angle = 0f;
+        
         static float boundary = 5.5f;
         static int coinIndex = 4;
 
@@ -50,8 +49,7 @@ namespace DodgeBall
 
         private static Matrix getWorldMatrix(Vector3 position)
         {
-            angle += 0.01f;
-            Matrix worldMatrix = Matrix.CreateRotationY(angle) * Matrix.CreateTranslation(position);
+            Matrix worldMatrix = Matrix.CreateTranslation(position);
             return worldMatrix;
         }
 
@@ -73,24 +71,28 @@ namespace DodgeBall
         {
             for (int i = 0; i < coinIndex; i++)
             {
-                for (int coinMeshIndex = 0; coinMeshIndex < coinModel.Meshes.Count; coinMeshIndex++)
+                if (coinsDraw[i])
                 {
-                    BoundingSphere coinSphere = coinModel.Meshes[coinMeshIndex].BoundingSphere;
-                    coinSphere = coinSphere.Transform(getWorldMatrix(coins[i]));
-
-                    for (int ballMeshIndex = 0; ballMeshIndex < ballModel.Meshes.Count; ballMeshIndex++)
+                    for (int coinMeshIndex = 0; coinMeshIndex < coinModel.Meshes.Count; coinMeshIndex++)
                     {
-                        BoundingSphere ballSphere = ballModel.Meshes[ballMeshIndex].BoundingSphere;
-                        ballSphere = ballSphere.Transform(ballWorldMatrix);
+                        BoundingSphere coinSphere = coinModel.Meshes[coinMeshIndex].BoundingSphere;
+                        coinSphere = coinSphere.Transform(getWorldMatrix(coins[i]));
 
-                        if (coinSphere.Intersects(ballSphere))
+                        for (int ballMeshIndex = 0; ballMeshIndex < ballModel.Meshes.Count; ballMeshIndex++)
                         {
-                            coinsDraw[i] = false;
-                            return true;
-                        }
+                            BoundingSphere ballSphere = ballModel.Meshes[ballMeshIndex].BoundingSphere;
+                            ballSphere = ballSphere.Transform(ballWorldMatrix);
 
+                            if (coinSphere.Intersects(ballSphere))
+                            {
+                                coinsDraw[i] = false;
+                                return true;
+                            }
+
+                        }
                     }
                 }
+                
             }
             return false;
 

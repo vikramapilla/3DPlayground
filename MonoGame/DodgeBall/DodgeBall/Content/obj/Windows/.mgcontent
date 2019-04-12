@@ -14,5 +14,16 @@
     <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/Coins_electric.dae</File>
     <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/Animal.png</File>
     <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/Animal.dae</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Audio/BackgroundMusic.ogg</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Audio/CoinExplosion.wav</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Audio/EnemyExplosion.wav</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Audio/GameOver.wav</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Audio/PlayerExplosion.wav</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Fonts/Score.spritefont</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Image/GameOver.png</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Image/GameBackGround.jpg</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Audio/BackgroundMusic_01.ogg</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Image/Restart.png</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Image/Credits.png</File>
   </SourceFiles>
 </SourceFileCollection>

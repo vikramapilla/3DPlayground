@@ -18,7 +18,7 @@ namespace DodgeBall
             playerPosition = new Vector3(0, 0, 0);
         }
 
-        public void Draw(Vector3 cameraPosition, float aspectRatio)
+        public void Draw()
         {
 
             if (Keyboard.GetState().IsKeyDown(Keys.I))
@@ -38,34 +38,10 @@ namespace DodgeBall
                 playerPosition += new Vector3(0.1f, 0, 0);
             }
 
-            //Console.WriteLine("Y = {0}", playerPosition.Z);
+            Game1.DrawModel(ballModel, Matrix.CreateTranslation(playerPosition));
 
-            foreach (ModelMesh mesh in ballModel.Meshes)
-            {
-                foreach(BasicEffect effect in mesh.Effects)
-                {
-                    effect.EnableDefaultLighting();
-                    effect.PreferPerPixelLighting = true;
-
-                    effect.World = Matrix.CreateTranslation(playerPosition); ;
-
-                    Vector3 cameraLookAtVector = Vector3.Zero;
-                    Vector3 cameraUpVector = Vector3.UnitZ;
-
-                    effect.View = Matrix.CreateLookAt(cameraPosition, cameraLookAtVector, cameraUpVector);
-
-                    float fieldOfView = MathHelper.PiOver4;
-                    float nearClipPlane = 1;
-                    float farClipPlane = 100;
-
-                    effect.Projection = Matrix.CreatePerspectiveFieldOfView(fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
-                }
-
-                mesh.Draw();
-            }
         }
 
 
-        
     }
 }

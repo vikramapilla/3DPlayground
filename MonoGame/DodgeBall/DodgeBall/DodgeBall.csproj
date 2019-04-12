@@ -42,6 +42,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Ball.cs" />
+    <Compile Include="Button.cs" />
     <Compile Include="Coin.cs" />
     <Compile Include="Enemy.cs" />
     <Compile Include="Game1.cs" />
