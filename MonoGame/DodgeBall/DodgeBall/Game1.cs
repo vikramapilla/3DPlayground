@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace DodgeBall
 {
@@ -11,6 +12,7 @@ namespace DodgeBall
 
         Ball ball;
         Enemy enemy;
+        Coin coin;
 
         public  Vector3 cameraPosition = new Vector3(0, 8, -14);
         public  Vector3 cameraLookAtVector = Vector3.Zero;
@@ -29,11 +31,16 @@ namespace DodgeBall
         Rectangle rightWall = new Rectangle(-6, 0, 1, 12);
         Rectangle leftWall = new Rectangle(6, 0, 1, 12);
 
-
+        Random random = new Random();
          
 
         float aspectRatio;
         float angle = 0f;
+        int timeToSpawn = 0;
+        int timeToSpawnCheck = 0;
+
+        static bool spawnFlag = false;
+        static bool randFlag = false;
 
         public Game1()
         {
@@ -46,8 +53,12 @@ namespace DodgeBall
 
             ball = new Ball();
             enemy = new Enemy();
+            coin = new Coin();
+
             ball.initialize(Content);
             enemy.initialize(Content);
+            coin.initialize(Content);
+
             base.Initialize();
             aspectRatio = graphics.PreferredBackBufferWidth / (float)graphics.PreferredBackBufferHeight;
 
@@ -114,6 +125,26 @@ namespace DodgeBall
 
             enemy.enemyMovement();
 
+            if (randFlag)
+            {
+                timeToSpawn = random.Next(60, 120);
+                randFlag = false;
+            }
+            timeToSpawnCheck++;
+
+            if(timeToSpawnCheck > timeToSpawn)
+            {
+                timeToSpawnCheck = 0;
+                spawnFlag = true;
+            }
+
+            if (spawnFlag)
+            {
+                coin.spawnCoin();
+                spawnFlag = false;
+                randFlag = true;
+            }
+            coin.IsCollision(ball.ballModel, playerMatrix);
             base.Update(gameTime);
         }
 
@@ -124,13 +155,12 @@ namespace DodgeBall
             // TODO: Add your drawing code here
             ball.Draw(cameraPosition, aspectRatio);
             enemy.Draw();
+            coin.Draw();
+
             DrawModel(playGround, Vector3.Zero, false);
             DrawModel(playGroundWall, Vector3.Zero, false);
             
-            DrawModel(electricCoins[0], new Vector3(5.5f, 0, 5.5f), true);
-            DrawModel(electricCoins[1], new Vector3(-5.5f, 0, 5.5f), true);
-            DrawModel(electricCoins[2], new Vector3(5.5f, 0, -5.5f), true);
-            DrawModel(electricCoins[3], new Vector3(-5.5f, 0, -5.5f), true);
+            
 
 
             base.Draw(gameTime);
@@ -180,28 +210,6 @@ namespace DodgeBall
                 mesh.Draw();
             }
         }
-
-
-
-        private bool IsPickUpCollision(Model model1, Matrix world1, Model model2, Matrix world2)
-        {
-            for (int meshIndex1 = 0; meshIndex1 < model1.Meshes.Count; meshIndex1++)
-            {
-                BoundingSphere sphere1 = model1.Meshes[meshIndex1].BoundingSphere;
-                sphere1 = sphere1.Transform(world1);
-
-                for (int meshIndex2 = 0; meshIndex2 < model2.Meshes.Count; meshIndex2++)
-                {
-                    BoundingSphere sphere2 = model2.Meshes[meshIndex2].BoundingSphere;
-                    sphere2 = sphere2.Transform(world2);
-
-                    if (sphere1.Intersects(sphere2))
-                        return true;
-                }
-            }
-            return false;
-        }
-
 
     }
 

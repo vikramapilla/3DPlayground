@@ -4,15 +4,15 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/3DBall.png</File>
-    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/3DBall.dae</File>
-    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/GameZoneGroundLevel_00.png</File>
-    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/GameZoneGroundLevel_00.dae</File>
-    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/GamoZoneWall.png</File>
-    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/GameZoneWall.dae</File>
-    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/Coins_electric.png</File>
-    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/Coins_electric.dae</File>
-    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/Animal.png</File>
-    <File>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/Animal.dae</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/3DBall.png</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/3DBall.dae</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/GameZoneGroundLevel_00.png</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/GameZoneGroundLevel_00.dae</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/GamoZoneWall.png</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/GameZoneWall.dae</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/Coins_electric.png</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/Coins_electric.dae</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/Animal.png</File>
+    <File>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/Animal.dae</File>
   </SourceFiles>
 </SourceFileCollection>

@@ -89,7 +89,7 @@ namespace DodgeBall
                 if (enemyPosition[3].Z <= -boundary) sideFlag[3] = true;
             }
 
-            angle += 0.05f;
+            angle += 0.075f;
 
         }
 
@@ -130,8 +130,7 @@ namespace DodgeBall
                 }
             }
             return false;
-
-
+            
         }
 
     }

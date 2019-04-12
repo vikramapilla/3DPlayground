@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/Models/3DBall.png</SourceFile>
+  <SourceFile>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/Models/3DBall.png</SourceFile>
   <SourceTime>2019-04-10T09:34:03.8777065+02:00</SourceTime>
-  <DestFile>C:/Users/vikra/source/repos/DodgeBall/DodgeBall/Content/bin/Windows/Models/3DBall_0.xnb</DestFile>
-  <DestTime>2019-04-10T10:12:54.4697215+02:00</DestTime>
+  <DestFile>C:/Users/vikra/OneDrive/Documents/GitHub/3DPlayground/MonoGame/DodgeBall/DodgeBall/Content/bin/Windows/Models/3DBall_0.xnb</DestFile>
+  <DestTime>2019-04-12T11:15:04.6562219+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T16:05:36+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
