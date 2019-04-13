@@ -5,11 +5,14 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using System;
 
+
+
 namespace DodgeBall
 {
-
     public class Game1 : Game
     {
+        static Vector3 CAMERA_ZERO = new Vector3(0, 2, -4f);
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -24,11 +27,10 @@ namespace DodgeBall
         static Coin coin;
         static Button button;
 
-        public  Vector3 cameraPosition = new Vector3(0, 8, -14);
-        public  Vector3 cameraLookAtVector = Vector3.Zero;
-        public  Vector3 cameraUpVector = Vector3.UnitZ;
+        static public Vector3 cameraPosition = CAMERA_ZERO;
+        public  Vector3 cameraUpVector = Vector3.Up;
         public  float fieldOfView = MathHelper.PiOver4;
-        public  float nearClipPlane = 1;
+        public  float nearClipPlane = 3f;
         public  float farClipPlane = 100;
 
         public static Matrix viewMatrix;
@@ -82,7 +84,7 @@ namespace DodgeBall
 
             aspectRatio = graphics.PreferredBackBufferWidth / (float)graphics.PreferredBackBufferHeight;
 
-            viewMatrix = Matrix.CreateLookAt(cameraPosition, cameraLookAtVector, cameraUpVector);
+            viewMatrix = Matrix.CreateLookAt(cameraPosition, new Vector3(ball.getPos().X, CAMERA_ZERO.Y, ball.getPos().Z), cameraUpVector);
             projectionMatrix = Matrix.CreatePerspectiveFieldOfView(fieldOfView, aspectRatio, nearClipPlane, farClipPlane);
 
 
@@ -122,6 +124,8 @@ namespace DodgeBall
             timeToSpawn = 0;
             timeToSpawnCheck = 0;
             score = 0;
+            cameraPosition = CAMERA_ZERO;
+
 
             spawnFlag = false;
             randFlag = false;
@@ -132,24 +136,29 @@ namespace DodgeBall
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-
+            if (playerMovementFlag)
+            {
+                cameraPosition = ball.Move(cameraPosition);
+                viewMatrix = Matrix.CreateLookAt(cameraPosition, new Vector3(ball.getPos().X, CAMERA_ZERO.Y, ball.getPos().Z), cameraUpVector);
+            }
             // TODO: Add your update logic here
-            Matrix ballWorlMatrix = Matrix.CreateTranslation(ball.playerPosition);
+            Matrix ballWorlMatrix = Matrix.CreateTranslation(ball.getPos());
             Matrix wallWorldMatrix = Matrix.CreateTranslation(Vector3.Zero);
 
-            playerSquare.X = (int)ball.playerPosition.X;
+            playerSquare.X = (int)ball.getPos().X;
             angle += 0.05f;
             
 
             isWallCollision();
             
 
-            Matrix playerMatrix = Matrix.CreateTranslation(ball.playerPosition);
+            Matrix playerMatrix = Matrix.CreateTranslation(ball.getPos());
             Matrix coinMatrix = Matrix.CreateTranslation(new Vector3(5.5f, 0, 5.5f));
 
-            if (enemy.IsCollision(ball.ballModel, playerMatrix))
+            if (enemy.IsCollision(ball.getModel(), playerMatrix))
             {
-                ball.playerPosition = Vector3.Zero;
+                ball.setPos(Vector3.Zero);
+                cameraPosition = CAMERA_ZERO;
                 enemySound.Play();
                 gameOverSound.Play();
                 MediaPlayer.Stop();
@@ -192,7 +201,7 @@ namespace DodgeBall
                 randFlag = true;
             }
 
-            if (coin.IsCollision(ball.ballModel, playerMatrix))
+            if (coin.IsCollision(ball.getModel(), playerMatrix))
             {
                 score++;
                 coinSound.Play();
@@ -203,24 +212,28 @@ namespace DodgeBall
         {
             if (playerSquare.Intersects(rightWall))
             {
-                ball.playerPosition.X += 0.75f;
+                ball.setPos(ball.getPos() + new Vector3(0.2f, 0, 0));
+                cameraPosition += new Vector3(0.2f, 0, 0);
                 wallSound.Play(0.45f, 0.5f, 0.5f);
             }
             if (playerSquare.Intersects(leftWall))
             {
-                ball.playerPosition.X -= 0.75f;
+                ball.setPos(ball.getPos() - new Vector3(0.2f, 0, 0));
+                cameraPosition -= new Vector3(0.2f, 0, 0);
                 wallSound.Play(0.45f, 0.5f, 0.5f);
             }
 
             //Problem with Z axis collision, that's why co-ordinates are used
-            if (ball.playerPosition.Z >= 6)
+            if (ball.getPos().Z >= 6)
             {
-                ball.playerPosition.Z -= 0.75f;
+                ball.setPos(ball.getPos() - new Vector3(0, 0, 0.2f));
+                cameraPosition -= new Vector3(0, 0, 0.2f);
                 wallSound.Play(0.45f, 0.5f, 0.5f);
             }
-            if (ball.playerPosition.Z <= -6)
+            if (ball.getPos().Z <= -6)
             {
-                ball.playerPosition.Z += 0.75f;
+                ball.setPos(ball.getPos() + new Vector3(0, 0, 0.2f));
+                cameraPosition += new Vector3(0, 0, 0.2f);
                 wallSound.Play(0.45f, 0.5f, 0.5f);
             }
         }
